@@ -13,9 +13,9 @@
 		EE29746325AE02AB00294550 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE29746125AE02AB00294550 /* Main.storyboard */; };
 		EE29746525AE02AD00294550 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE29746425AE02AD00294550 /* Assets.xcassets */; };
 		EE29746825AE02AD00294550 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE29746625AE02AD00294550 /* LaunchScreen.storyboard */; };
-		EEDDC63C25AF0BC2005F07B4 /* Coin01.aif in Resources */ = {isa = PBXBuildFile; fileRef = EEDDC63B25AF0BC2005F07B4 /* Coin01.aif */; };
-		EEDDC63F25AF0BD0005F07B4 /* Rise06.aif in Resources */ = {isa = PBXBuildFile; fileRef = EEDDC63E25AF0BD0005F07B4 /* Rise06.aif */; };
-		EEDDC64225AF0BDB005F07B4 /* Rise01.aif in Resources */ = {isa = PBXBuildFile; fileRef = EEDDC64125AF0BDB005F07B4 /* Rise01.aif */; };
+		EE7745EA25B73F4C0039AFF7 /* Rise06.aif in Resources */ = {isa = PBXBuildFile; fileRef = EE7745E725B73F4B0039AFF7 /* Rise06.aif */; };
+		EE7745EB25B73F4C0039AFF7 /* Rise03.aif in Resources */ = {isa = PBXBuildFile; fileRef = EE7745E825B73F4C0039AFF7 /* Rise03.aif */; };
+		EE7745EC25B73F4C0039AFF7 /* Coin01.aif in Resources */ = {isa = PBXBuildFile; fileRef = EE7745E925B73F4C0039AFF7 /* Coin01.aif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +27,9 @@
 		EE29746425AE02AD00294550 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE29746725AE02AD00294550 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE29746925AE02AD00294550 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EEDDC63B25AF0BC2005F07B4 /* Coin01.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = Coin01.aif; path = ../../../../../../Downloads/SoundPack01/Coin01.aif; sourceTree = "<group>"; };
-		EEDDC63E25AF0BD0005F07B4 /* Rise06.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = Rise06.aif; path = ../../../../../../Downloads/SoundPack01/Rise06.aif; sourceTree = "<group>"; };
-		EEDDC64125AF0BDB005F07B4 /* Rise01.aif */ = {isa = PBXFileReference; lastKnownFileType = file; name = Rise01.aif; path = ../../../../../../Downloads/SoundPack01/Rise01.aif; sourceTree = "<group>"; };
+		EE7745E725B73F4B0039AFF7 /* Rise06.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rise06.aif; sourceTree = "<group>"; };
+		EE7745E825B73F4C0039AFF7 /* Rise03.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Rise03.aif; sourceTree = "<group>"; };
+		EE7745E925B73F4C0039AFF7 /* Coin01.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Coin01.aif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,13 +64,13 @@
 			children = (
 				EE29745B25AE02AB00294550 /* AppDelegate.swift */,
 				EE29745D25AE02AB00294550 /* SceneDelegate.swift */,
-				EEDDC63B25AF0BC2005F07B4 /* Coin01.aif */,
 				EE29745F25AE02AB00294550 /* ViewController.swift */,
-				EEDDC64125AF0BDB005F07B4 /* Rise01.aif */,
-				EEDDC63E25AF0BD0005F07B4 /* Rise06.aif */,
 				EE29746125AE02AB00294550 /* Main.storyboard */,
 				EE29746425AE02AD00294550 /* Assets.xcassets */,
 				EE29746625AE02AD00294550 /* LaunchScreen.storyboard */,
+				EE7745E925B73F4C0039AFF7 /* Coin01.aif */,
+				EE7745E825B73F4C0039AFF7 /* Rise03.aif */,
+				EE7745E725B73F4B0039AFF7 /* Rise06.aif */,
 				EE29746925AE02AD00294550 /* Info.plist */,
 			);
 			path = Pomodoro;
@@ -133,11 +133,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEDDC64225AF0BDB005F07B4 /* Rise01.aif in Resources */,
 				EE29746825AE02AD00294550 /* LaunchScreen.storyboard in Resources */,
+				EE7745EA25B73F4C0039AFF7 /* Rise06.aif in Resources */,
+				EE7745EC25B73F4C0039AFF7 /* Coin01.aif in Resources */,
+				EE7745EB25B73F4C0039AFF7 /* Rise03.aif in Resources */,
 				EE29746525AE02AD00294550 /* Assets.xcassets in Resources */,
-				EEDDC63F25AF0BD0005F07B4 /* Rise06.aif in Resources */,
-				EEDDC63C25AF0BC2005F07B4 /* Coin01.aif in Resources */,
 				EE29746325AE02AB00294550 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

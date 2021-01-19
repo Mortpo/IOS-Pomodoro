@@ -31,6 +31,7 @@ class ViewController: UIViewController {
     var maxpomodoriTime:Float = 0.0
     var playerPomodori:AVAudioPlayer?
     var playerPause:AVAudioPlayer?
+    var playerBigPause:AVAudioPlayer?
     
     @objc func updateTimer(){
         if actualTime>0 {
@@ -124,8 +125,8 @@ class ViewController: UIViewController {
                 facteur = 1.0 / Float(longPauseTime)
                 maxpomodoriTime = Float(longPauseTime)
                 pomodoroStatus.text="Pause Time"
-                if playerPause   != nil {
-                    playerPause!.play()
+                if playerBigPause   != nil {
+                    playerBigPause!.play()
                 }
             default:
                 pomodori = 0
@@ -142,7 +143,7 @@ class ViewController: UIViewController {
         if startButton.tintColor == UIColor.systemPurple{
             
             startButton.tintColor = UIColor.systemIndigo
-            buttonLabel.text = "Stop"
+            startButton.setTitle("Stop", for: .normal)
 
 
             timer = Timer.scheduledTimer(timeInterval: 1, target: self,selector: #selector(updateTimer),userInfo: nil, repeats: true)
@@ -151,14 +152,25 @@ class ViewController: UIViewController {
         else
         {
             startButton.tintColor = UIColor.systemPurple
-            buttonLabel.text = "Start"
+            startButton.setTitle("Start", for: .normal)
             timer.invalidate()
 
             
         }
     }
+
+    @IBAction func switchToNextPomodori(_ sender: UISwipeGestureRecognizer) {
+        actualTime = -1
+        updateTimer()
+        startButton.tintColor = UIColor.systemPurple
+        startButton.setTitle("Start", for: .normal)
+        timer.invalidate()
+    }
     
+
+
     @IBOutlet weak var colormodestate: UIImageView!
+    
     @IBAction func switchMode(_ sender: UISwitch) {
         if overrideUserInterfaceStyle == .dark {
             overrideUserInterfaceStyle = .light
@@ -174,6 +186,22 @@ class ViewController: UIViewController {
     
     
 
+    @IBAction func longpressforreset(_ sender: Any) {
+        actualTime = 0
+        isRunning = false
+        progress = 0
+        facteur = 0.0
+        maxpomodoriTime = 0.0
+        pomodori = -1
+        startButton.setTitle("Start", for: .normal)
+        timer.invalidate()
+        startButton.tintColor = UIColor.systemPurple
+        timerLabel.text = String(format: "%02d:%02d",0,0)
+        pomodoriBar.text = "I I I I"
+        pomodoriProgressBar.setProgress(0.5, animated: false)
+        pomodoroStatus.text="Pomodoro Tracker"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let pathPomodori = Bundle.main.path(forResource: "Coin01", ofType: "aif")
@@ -196,6 +224,15 @@ class ViewController: UIViewController {
             print("Can't load sound")
         }
         
+        let pathBigPause = Bundle.main.path(forResource: "Rise03", ofType: "aif")
+        let urlBigPause =  URL(fileURLWithPath: pathBigPause!)
+        
+        do{
+            playerBigPause = try? AVAudioPlayer(contentsOf: urlBigPause)
+        }
+        catch{
+            print("Can't load sound")
+        }
         
         
         // Do any additional setup after loading the view.
