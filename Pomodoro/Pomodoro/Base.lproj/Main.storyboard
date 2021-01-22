@@ -19,7 +19,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tRr-Ba-PSn">
                                 <rect key="frame" x="20" y="704.33333333333337" width="151.66666666666666" height="61.333333333333371"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tache a faire" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSE-Zu-UXu">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tâche à faire" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSE-Zu-UXu">
                                         <rect key="frame" x="0.0" y="0.0" width="151.66666666666666" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="P1k-xb-4Ys"/>
@@ -28,10 +28,13 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Faire le swift" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="jf2-c6-iJz">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Ecrivez ici" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="21" translatesAutoresizingMaskIntoConstraints="NO" id="jf2-c6-iJz">
                                         <rect key="frame" x="0.0" y="24.000000000000004" width="151.66666666666666" height="37.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <action selector="closeKeyBoard:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="vrc-Ys-h4E"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -159,8 +162,8 @@
                         <outlet property="pomodoriProgressBar" destination="tkP-gA-KcU" id="U6d-UN-dhe"/>
                         <outlet property="pomodoroStatus" destination="tNN-y0-S8j" id="Otv-0I-qUk"/>
                         <outlet property="startButton" destination="8Xc-Dw-6eU" id="18I-fc-cOq"/>
+                        <outlet property="textField" destination="jf2-c6-iJz" id="hac-67-L4n"/>
                         <outlet property="timerLabel" destination="Ki2-oP-jH1" id="AlC-A6-CTm"/>
-                        <outlet property="todoTask" destination="jf2-c6-iJz" id="WHP-Vj-5hW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

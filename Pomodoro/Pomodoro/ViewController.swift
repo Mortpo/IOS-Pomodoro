@@ -9,7 +9,7 @@ import UIKit
 import AVFoundation
 
 class ViewController: UIViewController {
-
+    //les varaiables
     @IBOutlet weak var pomodoroStatus: UILabel!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var buttonLabel: UILabel!
@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var todoTask: UITextField!
     @IBOutlet weak var pomodoriProgressBar: UIProgressView!
+    @IBOutlet weak var colormodestate: UIImageView!
+    @IBOutlet weak var textField: UITextField!
     
     let maxPomodori = 4
     var pomodori = -1
@@ -33,8 +35,10 @@ class ViewController: UIViewController {
     var playerPause:AVAudioPlayer?
     var playerBigPause:AVAudioPlayer?
     
+    //fonction de gestion du temps
     @objc func updateTimer(){
         if actualTime>0 {
+            //Timer fonctionne
             actualTime -= 1
             let minutes = actualTime/60
             let secondes = actualTime % 60
@@ -47,6 +51,7 @@ class ViewController: UIViewController {
                 
             
         }else{
+            //une etape est passe il faut changer l'etat de l'application
             pomodori = (pomodori + 1) % 8
             pomodoriProgressBar.setProgress(0, animated: true)
             switch pomodori {
@@ -138,7 +143,7 @@ class ViewController: UIViewController {
         }
         
     }
-    
+    // Debute le compteur/le reprend si il ete en pause
     @IBAction func startButonPressed(_ sender: UIButton) {
         if startButton.tintColor == UIColor.systemPurple{
             
@@ -158,7 +163,8 @@ class ViewController: UIViewController {
             
         }
     }
-
+    
+    //si swipe a droite alors on passe au pomodori suivant
     @IBAction func switchToNextPomodori(_ sender: UISwipeGestureRecognizer) {
         actualTime = -1
         updateTimer()
@@ -169,8 +175,16 @@ class ViewController: UIViewController {
     
 
 
-    @IBOutlet weak var colormodestate: UIImageView!
     
+//Ferme le clavier
+    @IBAction func closeKeyBoard(_ sender: UITextField) {
+        textField.resignFirstResponder()
+    }
+    
+    
+
+    
+    //Changement de couleur theme nuit ou jour
     @IBAction func switchMode(_ sender: UISwitch) {
         if overrideUserInterfaceStyle == .dark {
             overrideUserInterfaceStyle = .light
@@ -185,7 +199,7 @@ class ViewController: UIViewController {
     }
     
     
-
+// fonction de reset si le bouton principal est maintenu
     @IBAction func longpressforreset(_ sender: Any) {
         actualTime = 0
         isRunning = false
@@ -202,8 +216,20 @@ class ViewController: UIViewController {
         pomodoroStatus.text="Pomodoro Tracker"
     }
     
+    // MARK: INITALISATION DE VIEW
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //verification du theme par defaut de l'appareil
+        if overrideUserInterfaceStyle == .light {
+            colormodestate.image = UIImage(systemName:"sun.max.fill")
+        }
+        if overrideUserInterfaceStyle == .dark{
+            colormodestate.image = UIImage(systemName:"moon.fill")
+        }
+        
+        
+        //generation des player de sons
         let pathPomodori = Bundle.main.path(forResource: "Coin01", ofType: "aif")
         let urlPomodori =  URL(fileURLWithPath: pathPomodori!)
         
