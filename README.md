@@ -1,8 +1,5 @@
 # IOS-Pomodoro
 
-
-Compte Rendu Programmation mobile
-
 Mon application se nomme Pomodoro. C’est une technique de travaille qui consiste à travailler 25 min puis faire une pause de 5 min et recommencer, au bout de 4 fois 25 min il y a une pause plus longue. Cette technique a pour objectif de réaliser une tache efficacement sans être déconcentrer.
 J’ai voulu faire une application simple et efficace sans surcharger l’interface, c’est pour cela que j’ai utiliser des gestes pour certaines fonctions.
 -Un bouton start et stop.
