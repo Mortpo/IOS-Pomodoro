@@ -12,5 +12,3 @@ J’ai voulu faire une application simple et efficace sans surcharger l’interf
 -Il y a une zone de texte pour savoir la tâche à faire.
 -L’application génère des sons pour notifier l’utilisateur que le temps est écoulé.
 -L’application possède un mode nuit.
-
-Le lien du github est : https://github.com/Mortpo/IOS-Pomodoro
